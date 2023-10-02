@@ -33,8 +33,9 @@ const BlogPostPage = (props: props) => {
           <div className="column-20">
             <div className="sidebar">
               <h3>Om mig</h3>
-              <p>Kalle Anka</p>
-              <p>hej hej jag heter kalle o är en anka tack för mig</p>
+              <img src="" alt="bild" />
+              <p>Namn</p>
+              <p>Lite information om mig</p>
             </div>
           </div>
         </div>

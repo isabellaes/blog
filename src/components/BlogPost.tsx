@@ -9,7 +9,10 @@ interface props {
 const BlogPost = (props: props) => {
   return (
     <div className="blogpost">
-      <NavLink to={"/" + props.blogpost.title}>
+      <NavLink
+        to={"/" + props.blogpost.title}
+        style={{ textDecoration: "none" }}
+      >
         <h1>{props.blogpost.title}</h1>
       </NavLink>
 

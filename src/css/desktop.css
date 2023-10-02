@@ -11,36 +11,63 @@
 .flex-column {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .flex-row {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
 }
 .column-10 {
   width: 10%;
   min-height: 100%;
+  background: linear-gradient(rgb(247, 212, 240), rgb(251, 237, 248));
+  box-sizing: border-box;
 }
 .column-20 {
   width: 20%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+}
+.column-80-1 {
+  width: 80%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+    0 20px 20px 2px rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
 }
 .column-80 {
   width: 80%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .sidebar {
   min-height: 100%;
-  background-color: rgb(77, 57, 72);
+  background-color: rgb(240, 233, 239);
+  border-left: 1px rgb(237, 143, 222) solid;
   padding: 1em;
+  box-sizing: border-box;
 }
 
 .header {
-  height: 10em;
-  background-color: aqua;
+  height: 20em;
+  background-color: rgb(253, 251, 253);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+.header img {
+  height: 19em;
 }
 .footer {
   height: 5em;
@@ -49,14 +76,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 .navbar {
   height: 5em;
-  background-color: rgb(88, 193, 50);
+  background: linear-gradient(rgb(237, 143, 222), rgb(247, 212, 240));
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .navbar p {
@@ -65,7 +94,25 @@
 
 .content {
   min-height: 100%;
-  background-color: rgb(146, 20, 117);
+  background-color: rgb(253, 251, 253);
   padding: 1em;
   border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  color: black;
+  padding: 0.8em;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  background-color: inherit;
 }

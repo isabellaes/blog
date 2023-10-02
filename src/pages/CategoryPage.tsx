@@ -24,26 +24,39 @@ const CategoryPage = (props: props) => {
           <div className="column-80">
             <div className="content">
               {blogsByCategory.flatMap((element) => (
-                <BlogPost blogpost={element}></BlogPost>
+                <ul>
+                  <li key={element.title}>
+                    <BlogPost blogpost={element}></BlogPost>
+                  </li>
+                </ul>
               ))}
             </div>
           </div>
           <div className="column-20">
             <div className="sidebar">
               <h3>Om mig</h3>
-              <p>Kalle Anka</p>
-              <p>hej hej jag heter kalle o är en anka tack för mig</p>
+              <img src="" alt="bild" />
+              <p>Namn</p>
+              <p>Lite information om mig</p>
               <h3>Senaste Inläggen</h3>
               {blogsByCategory.flatMap((element) => (
-                <NavLink to={"/" + element.title}>
-                  <p>{element.title}</p>
-                </NavLink>
+                <ul>
+                  <li key={element.title}>
+                    <NavLink to={"/" + element.title}>
+                      <p>{element.title}</p>
+                    </NavLink>
+                  </li>
+                </ul>
               ))}
               <h3>Kategorier</h3>
               {categorys.flatMap((element) => (
-                <NavLink to={"/" + element.name}>
-                  <p>{element.name}</p>
-                </NavLink>
+                <ul>
+                  <li key={element.name}>
+                    <NavLink to={"/" + element.name}>
+                      <p>{element.name}</p>
+                    </NavLink>
+                  </li>
+                </ul>
               ))}
             </div>
           </div>
