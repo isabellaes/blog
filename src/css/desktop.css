@@ -118,7 +118,32 @@ button {
 }
 
 .navbar p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.blogpost {
+  height: fit-content;
+  background-color: ghostwhite;
+  margin: 1em;
+  padding: 1em;
+}
+
+.blogpost h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.blogpost p {
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
+  font-weight: 300;
 }
