@@ -42,7 +42,10 @@ const CategoryPage = (props: props) => {
               {blogsByCategory.flatMap((element) => (
                 <ul>
                   <li key={element.title}>
-                    <NavLink to={"/" + element.title}>
+                    <NavLink
+                      to={"/" + element.title}
+                      style={{ textDecoration: "none" }}
+                    >
                       <p>{element.title}</p>
                     </NavLink>
                   </li>
@@ -52,7 +55,10 @@ const CategoryPage = (props: props) => {
               {categorys.flatMap((element) => (
                 <ul>
                   <li key={element.name}>
-                    <NavLink to={"/" + element.name}>
+                    <NavLink
+                      to={"/" + element.name}
+                      style={{ textDecoration: "none" }}
+                    >
                       <p>{element.name}</p>
                     </NavLink>
                   </li>
