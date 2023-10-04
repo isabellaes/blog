@@ -17,7 +17,7 @@ const CategoryPage = (props: props) => {
   return (
     <div className="container">
       <div className="column-10"></div>
-      <div className="column-80">
+      <div className="column-80-1">
         <Header></Header>
         <NavBar></NavBar>
         <div className="flex-row">

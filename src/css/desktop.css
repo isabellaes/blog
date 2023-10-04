@@ -22,7 +22,7 @@
 .column-10 {
   width: 10%;
   min-height: 100%;
-  background: linear-gradient(rgb(247, 212, 240), rgb(251, 237, 248));
+  background: linear-gradient(rgb(185, 181, 250), rgb(203, 199, 251));
   box-sizing: border-box;
 }
 .column-20 {
@@ -51,27 +51,27 @@
 .sidebar {
   min-height: 100%;
   background-color: rgb(240, 233, 239);
-  border-left: 1px rgb(237, 143, 222) solid;
+
   padding: 1em;
   box-sizing: border-box;
 }
 
 .header {
-  height: 20em;
+  height: 30em;
   background-color: rgb(253, 251, 253);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
   box-sizing: border-box;
 }
 .header img {
-  height: 19em;
+  width: 100%;
 }
 .footer {
   height: 5em;
-  background-color: rgb(181, 193, 177);
+  background-color: rgb(238, 237, 251);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,7 +80,7 @@
 }
 .navbar {
   height: 5em;
-  background: linear-gradient(rgb(237, 143, 222), rgb(247, 212, 240));
+  background-color: rgb(208, 205, 247);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,7 +96,7 @@
   min-height: 100%;
   background-color: rgb(253, 251, 253);
   padding: 1em;
-  border-bottom: 1px solid black;
+
   box-sizing: border-box;
 }
 
@@ -146,4 +146,7 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-weight: 300;
+}
+.profilepic {
+  width: 30%;
 }

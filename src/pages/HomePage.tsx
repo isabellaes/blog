@@ -6,6 +6,7 @@ import BlogPost from "../components/BlogPost";
 import { blogposts, categorys } from "../utils/types";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import profilepic from "../assets/blank-profile-picture-973460_640.png";
 
 const HomePage = () => {
   const [blogpost, setBlogposts] = useState(blogposts);
@@ -44,7 +45,7 @@ const HomePage = () => {
           <div className="column-20">
             <div className="sidebar">
               <h3>Om mig</h3>
-              <img src="" alt="bild" />
+              <img src={profilepic} alt="bild" className="profilepic" />
               <p>Namn</p>
               <p>Lite information om mig</p>
               <h3>Senaste Inläggen</h3>
