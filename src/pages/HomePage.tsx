@@ -7,6 +7,8 @@ import { blogposts, categorys } from "../utils/types";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
+import { RootState } from "../store/store";
+import { useAppDispatch, useAppSelector } from "../store/selector";
 
 const HomePage = () => {
   const [blogpost, setBlogposts] = useState(blogposts);
@@ -15,6 +17,12 @@ const HomePage = () => {
   const values: string[] = [];
   const split = unique[0].forEach((entry) => values.push(entry));
   console.log(values);
+
+  const currentBlogs = (state: RootState) => {
+    return state.post.posts;
+  };
+  const bloggss = useAppSelector(currentBlogs);
+  console.log(bloggss);
 
   function sortPosts(year: string) {
     const blogs = blogposts.filter(
