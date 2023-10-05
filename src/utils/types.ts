@@ -132,4 +132,4 @@ export const blogposts: blogpost[] = [
   },
 ];
 
-export type { blogpost, category };
+export type { blogpost, category, comment };

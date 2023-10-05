@@ -1,4 +1,5 @@
 import BlogPost from "../components/BlogPost";
+import CommentForm from "../components/CommentForm";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -18,6 +19,10 @@ const BlogPostPage = (props: props) => {
           <div className="column-80">
             <div className="content">
               <BlogPost blogpost={props.post}></BlogPost>
+
+              <p>Lägg till kommentar:</p>
+              <CommentForm post={props.post}></CommentForm>
+
               {props.post.comments ? (
                 props.post.comments.flatMap((comment) => (
                   <div>
