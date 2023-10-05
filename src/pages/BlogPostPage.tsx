@@ -1,14 +1,14 @@
+import { useParams } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
-import CommentForm from "../components/CommentForm";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import "../css/desktop.css";
-import { blogpost } from "../utils/types";
-interface props {
-  post: blogpost;
-}
-const BlogPostPage = (props: props) => {
+import { blogposts } from "../utils/types";
+
+const BlogPostPage = () => {
+  const params = useParams<{ Id: string }>();
+  const blogpost = blogposts.find((post) => post.id === Number(params.Id));
   return (
     <div className="container">
       <div className="column-10"></div>
@@ -17,25 +17,27 @@ const BlogPostPage = (props: props) => {
         <NavBar></NavBar>
         <div className="flex-row">
           <div className="column-80">
-            <div className="content">
-              <BlogPost blogpost={props.post}></BlogPost>
+            {blogpost ? (
+              <div className="content">
+                <BlogPost blogpost={blogpost}></BlogPost>
 
-              <p>Lägg till kommentar:</p>
-              <CommentForm post={props.post}></CommentForm>
-
-              {props.post.comments ? (
-                props.post.comments.flatMap((comment) => (
-                  <div>
-                    <p>Namn:</p>
-                    <p>{comment.name}</p>
-                    <p>Kommentar:</p>
-                    <p>{comment.comment}</p>
-                  </div>
-                ))
-              ) : (
-                <p></p>
-              )}
-            </div>
+                {blogpost.comments ? (
+                  blogpost.comments.flatMap((comment) => (
+                    <div>
+                      <h3>Kommentarer:</h3>
+                      <p>Namn:</p>
+                      <p>{comment.name}</p>
+                      <p>Kommentar:</p>
+                      <p>{comment.comment}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p></p>
+                )}
+              </div>
+            ) : (
+              <p></p>
+            )}
           </div>
           <div className="column-20">
             <div className="sidebar">

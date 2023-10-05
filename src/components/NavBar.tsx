@@ -10,7 +10,10 @@ const NavBar = () => {
       </NavLink>
 
       {categorys.flatMap((element) => (
-        <NavLink to={"/" + element.name} style={{ textDecoration: "none" }}>
+        <NavLink
+          to={`/category/${element.id}`}
+          style={{ textDecoration: "none" }}
+        >
           <p>{element.name}</p>
         </NavLink>
       ))}

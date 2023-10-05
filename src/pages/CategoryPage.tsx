@@ -5,12 +5,17 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import "../css/desktop.css";
 import { blogposts, category, categorys } from "../utils/types";
+import { useParams } from "react-router-dom";
 interface props {
   category: category;
 }
-const CategoryPage = (props: props) => {
+const CategoryPage = () => {
+  const params = useParams<{ Id: string }>();
+  const category = categorys.find(
+    (category) => category.id === Number(params.Id)
+  );
   const blogsByCategory = blogposts.filter(
-    (element) => element.category.name === props.category.name
+    (element) => element.category.name === category?.name
   );
   const years = blogposts.map((element) => element.date.substring(0, 4));
   const unique = [new Set(years)];
@@ -43,7 +48,7 @@ const CategoryPage = (props: props) => {
                 <ul>
                   <li key={element.title}>
                     <NavLink
-                      to={"/" + element.title}
+                      to={`/blogpost/${element.id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <p>{element.title}</p>
@@ -56,7 +61,7 @@ const CategoryPage = (props: props) => {
                 <ul>
                   <li key={element.name}>
                     <NavLink
-                      to={"/" + element.name}
+                      to={`/category/${element.id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <p>{element.name}</p>

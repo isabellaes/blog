@@ -9,18 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
-        {categorys.flatMap((element) => (
-          <Route
-            path={element.name}
-            element={<CategoryPage category={element} />}
-          />
-        ))}
-        {blogposts.flatMap((element) => (
-          <Route
-            path={element.title}
-            element={<BlogPostPage post={element} />}
-          />
-        ))}
+        <Route path="category/:Id" element={<CategoryPage />} />
+        <Route path="blogpost/:Id" element={<BlogPostPage />} />
       </Routes>
     </BrowserRouter>
   );

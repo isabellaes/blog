@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BlogPost from "../components/BlogPost";
 import { blogposts, categorys } from "../utils/types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import { RootState } from "../store/store";
@@ -16,7 +16,7 @@ const HomePage = () => {
   const unique = [new Set(years)];
   const values: string[] = [];
   const split = unique[0].forEach((entry) => values.push(entry));
-  console.log(values);
+  const navigate = useNavigate();
 
   const currentBlogs = (state: RootState) => {
     return state.post.posts;
@@ -59,9 +59,9 @@ const HomePage = () => {
               <h3>Senaste Inläggen</h3>
               {blogposts.flatMap((element) => (
                 <ul>
-                  <li key={element.title}>
+                  <li key={element.id}>
                     <NavLink
-                      to={"/" + element.title}
+                      to={`/blogpost/${element.id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <p>{element.title}</p>
@@ -72,9 +72,9 @@ const HomePage = () => {
               <h3>Kategorier</h3>
               {categorys.flatMap((element) => (
                 <ul>
-                  <li key={element.name}>
+                  <li key={element.id}>
                     <NavLink
-                      to={"/" + element.name}
+                      to={`/category/${element.id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <p>{element.name}</p>

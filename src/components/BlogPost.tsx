@@ -10,7 +10,7 @@ const BlogPost = (props: props) => {
   return (
     <div className="blogpost">
       <NavLink
-        to={"/" + props.blogpost.title}
+        to={`/blogpost/${props.blogpost.id}`}
         style={{ textDecoration: "none" }}
       >
         <h1>{props.blogpost.title}</h1>

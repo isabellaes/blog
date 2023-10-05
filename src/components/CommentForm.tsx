@@ -8,15 +8,14 @@ const CommentForm = (props: props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+
   function onSubmit() {
     let comment: comment = {
+      id: 9,
       name: name,
       email: email,
       comment: message,
     };
-    props.post.comments?.push(comment);
-    navigate("/" + props.post.title);
   }
   return (
     <form onSubmit={onSubmit}>
