@@ -6,9 +6,7 @@ import NavBar from "../components/NavBar";
 import "../css/desktop.css";
 import { blogposts, category, categorys } from "../utils/types";
 import { useParams } from "react-router-dom";
-interface props {
-  category: category;
-}
+
 const CategoryPage = () => {
   const params = useParams<{ Id: string }>();
   const category = categorys.find(

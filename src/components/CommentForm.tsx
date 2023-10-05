@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { blogpost, comment } from "../utils/types";
-import { useNavigate } from "react-router-dom";
+
 interface props {
   post: blogpost;
 }

@@ -20,10 +20,6 @@ interface category {
   name: string;
 }
 
-interface id {
-  id: number;
-}
-
 export const categorys: category[] = [
   { id: 1, name: "Allmänt" },
   { id: 2, name: "Dagbok" },
