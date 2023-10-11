@@ -1,38 +1,18 @@
 import "../css/desktop.css";
-import NavBar from "../components/NavBar";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import BlogPost from "../components/BlogPost";
-import { blogposts, categorys } from "../utils/types";
+import { blogposts, categorys, values } from "../utils/types";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 
 const HomePage = () => {
-  const [blogpost, setBlogposts] = useState(blogposts);
-  const years = blogposts.map((element) => element.date.substring(0, 4));
-  const unique = [new Set(years)];
-  const values: string[] = [];
-  const split = unique[0].forEach((entry) => values.push(entry));
-
-  function sortPosts(year: string) {
-    const blogs = blogposts.filter(
-      (post) => post.date.substring(0, 4) === year
-    );
-
-    return setBlogposts(blogs);
-  }
-
   return (
     <div className="container">
       <div className="column-10"></div>
       <div className="column-80-1">
-        <Header></Header>
-        <NavBar></NavBar>
         <div className="flex-row">
           <div className="column-80">
             <div className="content">
-              {blogpost.flatMap((element) => (
+              {blogposts.flatMap((element) => (
                 <ul>
                   <li key={element.title}>
                     <BlogPost blogpost={element}></BlogPost>
@@ -77,16 +57,18 @@ const HomePage = () => {
               {values.flatMap((element) => (
                 <ul>
                   <li key={element}>
-                    <button onClick={() => sortPosts(element)}>
-                      {element}
-                    </button>
+                    <NavLink
+                      to={`/archive/${element}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <p>{element}</p>
+                    </NavLink>
                   </li>
                 </ul>
               ))}
             </div>
           </div>
         </div>
-        <Footer></Footer>
       </div>
       <div className="column-10"></div>
     </div>

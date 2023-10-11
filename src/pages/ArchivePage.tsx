@@ -5,13 +5,11 @@ import "../css/desktop.css";
 import { blogposts, categorys, values } from "../utils/types";
 import { useParams } from "react-router-dom";
 
-const CategoryPage = () => {
+const ArchivePage = () => {
   const params = useParams<{ Id: string }>();
-  const category = categorys.find(
-    (category) => category.id === Number(params.Id)
-  );
-  const blogsByCategory = blogposts.filter(
-    (element) => element.category.name === category?.name
+
+  const blogsByYear = blogposts.filter(
+    (element) => element.date.substring(0, 4) === params.Id
   );
 
   return (
@@ -21,7 +19,7 @@ const CategoryPage = () => {
         <div className="flex-row">
           <div className="column-80">
             <div className="content">
-              {blogsByCategory.flatMap((element) => (
+              {blogsByYear.flatMap((element) => (
                 <ul>
                   <li key={element.title}>
                     <BlogPost blogpost={element}></BlogPost>
@@ -37,7 +35,7 @@ const CategoryPage = () => {
               <p>Namn</p>
               <p>Lite information om mig</p>
               <h3>Senaste Inläggen</h3>
-              {blogsByCategory.flatMap((element) => (
+              {blogsByYear.flatMap((element) => (
                 <ul>
                   <li key={element.title}>
                     <NavLink
@@ -83,4 +81,4 @@ const CategoryPage = () => {
     </div>
   );
 };
-export default CategoryPage;
+export default ArchivePage;

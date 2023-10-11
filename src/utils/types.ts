@@ -150,4 +150,9 @@ export const blogposts: blogpost[] = [
   },
 ];
 
+const years = blogposts.map((element) => element.date.substring(0, 4));
+const unique = [new Set(years)];
+export const values: string[] = [];
+unique[0].forEach((entry) => values.push(entry));
+
 export type { blogpost, category, comment };
