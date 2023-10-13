@@ -16,7 +16,7 @@ const BlogPostPage = () => {
             {blogpost ? (
               <div className="content">
                 <BlogPost blogpost={blogpost}></BlogPost>
-
+                <p>Kommentera:</p>
                 {blogpost.comments ? (
                   blogpost.comments.flatMap((comment) => (
                     <div>
