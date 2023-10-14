@@ -2,13 +2,24 @@ import { NavLink } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
-import { blogposts, categorys, values } from "../utils/types";
+import { values } from "../utils/types";
 import { useParams } from "react-router-dom";
+import { useAppSelector } from "../store/selector";
+import { RootState } from "../store/store";
 
 const ArchivePage = () => {
   const params = useParams<{ Id: string }>();
 
-  const blogsByYear = blogposts.filter(
+  const currentBlogs = (state: RootState) => {
+    return state.post.posts;
+  };
+  const bloggposts = useAppSelector(currentBlogs);
+
+  const currentCategorys = (state: RootState) => {
+    return state.post.categories;
+  };
+  const categorys = useAppSelector(currentCategorys);
+  const blogsByYear = bloggposts.filter(
     (element) => element.date.substring(0, 4) === params.Id
   );
 

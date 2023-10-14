@@ -2,15 +2,26 @@ import { NavLink } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
-import { blogposts, categorys, values } from "../utils/types";
+import { values } from "../utils/types";
 import { useParams } from "react-router-dom";
+import { useAppSelector } from "../store/selector";
+import { RootState } from "../store/store";
 
 const CategoryPage = () => {
   const params = useParams<{ Id: string }>();
+  const currentBlogs = (state: RootState) => {
+    return state.post.posts;
+  };
+  const bloggposts = useAppSelector(currentBlogs);
+
+  const currentCategorys = (state: RootState) => {
+    return state.post.categories;
+  };
+  const categorys = useAppSelector(currentCategorys);
   const category = categorys.find(
     (category) => category.id === Number(params.Id)
   );
-  const blogsByCategory = blogposts.filter(
+  const blogsByCategory = bloggposts.filter(
     (element) => element.category.name === category?.name
   );
 

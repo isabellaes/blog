@@ -2,11 +2,22 @@ import { NavLink, useParams } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
-import { blogposts, categorys, values } from "../utils/types";
+import { values } from "../utils/types";
+import { useAppSelector } from "../store/selector";
+import { RootState } from "../store/store";
+import CommentForm from "../components/CommentForm";
 
 const BlogPostPage = () => {
   const params = useParams<{ Id: string }>();
-  const blogpost = blogposts.find((post) => post.id === Number(params.Id));
+  const currentBlogs = (state: RootState) => {
+    return state.post.posts;
+  };
+  const bloggposts = useAppSelector(currentBlogs);
+  const blogpost = bloggposts.find((post) => post.id === Number(params.Id));
+  const currentCategorys = (state: RootState) => {
+    return state.post.categories;
+  };
+  const categorys = useAppSelector(currentCategorys);
   return (
     <div className="container">
       <div className="column-10"></div>
@@ -17,6 +28,7 @@ const BlogPostPage = () => {
               <div className="content">
                 <BlogPost blogpost={blogpost}></BlogPost>
                 <p>Kommentera:</p>
+                <CommentForm post={blogpost}></CommentForm>
                 {blogpost.comments ? (
                   blogpost.comments.flatMap((comment) => (
                     <div>
@@ -42,7 +54,7 @@ const BlogPostPage = () => {
               <p>Namn</p>
               <p>Lite information om mig</p>
               <h3>Senaste Inläggen</h3>
-              {blogposts.flatMap((element) => (
+              {bloggposts.flatMap((element) => (
                 <ul>
                   <li key={element.id}>
                     <NavLink
