@@ -6,10 +6,10 @@ import { blogposts, categorys } from "../utils/types";
 interface initialstateinterface {
   posts: blogpost[];
   categories: category[];
+  comments: comment[];
 }
 
 interface payloadAction {
-  post: blogpost;
   comment: comment;
 }
 
@@ -22,7 +22,6 @@ const initialstate: initialstateinterface = {
         " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae",
       date: "2023-02-08",
       category: categorys[0],
-      comments: [{ id: 1, name: "123", email: "123", comment: "123" }],
     },
     {
       id: 2,
@@ -138,6 +137,7 @@ const initialstate: initialstateinterface = {
     },
   ],
   categories: categorys,
+  comments: [],
 };
 
 export const postSlice = createSlice({
@@ -145,10 +145,9 @@ export const postSlice = createSlice({
   initialState: initialstate,
   reducers: {
     addComment: (state, action: PayloadAction<payloadAction>) => {
-      let index = state.posts.findIndex(
-        (x) => x.title === action.payload.post.title
-      );
-      state.posts[index].comments?.push(action.payload.comment);
+      console.log(state.comments);
+      state.comments.push(action.payload.comment);
+      console.log(state.comments);
     },
   },
 });

@@ -18,11 +18,6 @@ const BlogPost = (props: props) => {
 
       <p>{props.blogpost.date}</p>
       <p>{props.blogpost.content}</p>
-      {props.blogpost.comments ? (
-        <p>Kommentarer: {props.blogpost.comments.length}</p>
-      ) : (
-        <p>Kommentarer: 0</p>
-      )}
     </div>
   );
 };

@@ -160,3 +160,8 @@ h3 {
 .profilepic {
   width: 30%;
 }
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+}

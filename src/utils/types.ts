@@ -4,12 +4,12 @@ interface blogpost {
   content: string;
   date: string;
   img?: string;
-  comments?: comment[];
   category: category;
 }
 
 interface comment {
   id: number;
+  postId: number;
   name: string;
   email: string;
   comment: string;
@@ -34,7 +34,6 @@ export const blogposts: blogpost[] = [
       " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae",
     date: "2023-02-08",
     category: categorys[0],
-    comments: [{ id: 1, name: "123", email: "123", comment: "123" }],
   },
   {
     id: 2,

@@ -19,6 +19,7 @@ const NavBar = () => {
           <NavLink
             to={`/category/${element.id}`}
             style={{ textDecoration: "none" }}
+            key={element.id}
           >
             <p>{element.name}</p>
           </NavLink>

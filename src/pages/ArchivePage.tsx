@@ -31,11 +31,7 @@ const ArchivePage = () => {
           <div className="column-80">
             <div className="content">
               {blogsByYear.flatMap((element) => (
-                <ul>
-                  <li key={element.title}>
-                    <BlogPost blogpost={element}></BlogPost>
-                  </li>
-                </ul>
+                <BlogPost blogpost={element} key={element.id}></BlogPost>
               ))}
             </div>
           </div>
@@ -47,42 +43,33 @@ const ArchivePage = () => {
               <p>Lite information om mig</p>
               <h3>Senaste Inläggen</h3>
               {blogsByYear.flatMap((element) => (
-                <ul>
-                  <li key={element.title}>
-                    <NavLink
-                      to={`/blogpost/${element.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <p>{element.title}</p>
-                    </NavLink>
-                  </li>
-                </ul>
+                <NavLink
+                  to={`/blogpost/${element.id}`}
+                  style={{ textDecoration: "none" }}
+                  key={element.id}
+                >
+                  <p>{element.title}</p>
+                </NavLink>
               ))}
               <h3>Kategorier</h3>
               {categorys.flatMap((element) => (
-                <ul>
-                  <li key={element.name}>
-                    <NavLink
-                      to={`/category/${element.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <p>{element.name}</p>
-                    </NavLink>
-                  </li>
-                </ul>
+                <NavLink
+                  to={`/category/${element.id}`}
+                  style={{ textDecoration: "none" }}
+                  key={element.id}
+                >
+                  <p>{element.name}</p>
+                </NavLink>
               ))}
               <h3>Arkiv</h3>
               {values.flatMap((element) => (
-                <ul>
-                  <li key={element}>
-                    <NavLink
-                      to={`/archive/${element}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <p>{element}</p>
-                    </NavLink>
-                  </li>
-                </ul>
+                <NavLink
+                  to={`/archive/${element}`}
+                  style={{ textDecoration: "none" }}
+                  key={element}
+                >
+                  <p>{element}</p>
+                </NavLink>
               ))}
             </div>
           </div>
