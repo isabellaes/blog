@@ -1,4 +1,6 @@
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 import { NavLink } from "react-router-dom";
 import { categorys } from "../utils/types";
 import img from "../assets/blogheaders.png";

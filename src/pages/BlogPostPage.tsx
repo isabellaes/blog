@@ -2,6 +2,8 @@ import { NavLink, useParams } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 import { comment, values } from "../utils/types";
 import { useAppSelector, AppState, useAppDispatch } from "../store/store";
 import { useEffect, useState } from "react";

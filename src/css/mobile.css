@@ -1,4 +1,4 @@
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 600px) {
   .container {
     padding: 0;
     margin: 0;
@@ -21,7 +21,7 @@
     box-sizing: border-box;
   }
   .column-10 {
-    width: 10%;
+    width: 0;
     min-height: 100%;
     background: linear-gradient(rgb(185, 181, 250), rgb(203, 199, 251));
     box-sizing: border-box;
@@ -32,9 +32,10 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    display: none;
   }
   .column-80-1 {
-    width: 80%;
+    width: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@
     background: linear-gradient(rgb(185, 181, 250), rgb(203, 199, 251));
   }
   .column-80 {
-    width: 80%;
+    width: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -59,15 +60,15 @@
   }
   .NavBarHeader {
     width: 100%;
-    height: 35em;
+    height: 15em;
     display: flex;
     flex-direction: column;
     background-color: rgb(185, 181, 250);
   }
   .header {
-    height: 30em;
-    margin-left: 10%;
-    margin-right: 10%;
+    height: 10em;
+    margin-left: 0;
+    margin-right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,18 +80,19 @@
     width: 100%;
   }
   .footer {
-    height: 5em;
+    height: 8em;
+    padding: 1em;
     background-color: rgb(203, 199, 251);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
   }
   .navbar {
     height: 5em;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 0;
+    margin-right: 0;
     background-color: rgb(208, 205, 247);
     display: flex;
     flex-direction: row;

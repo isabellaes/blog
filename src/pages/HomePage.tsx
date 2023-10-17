@@ -1,4 +1,6 @@
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 import BlogPost from "../components/BlogPost";
 import { values } from "../utils/types";
 import { NavLink } from "react-router-dom";

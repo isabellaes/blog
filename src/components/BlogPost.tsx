@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 import { blogpost } from "../utils/types";
 import { AppState, useAppSelector } from "../store/store";
 

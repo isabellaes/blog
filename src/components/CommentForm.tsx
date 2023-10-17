@@ -3,6 +3,8 @@ import { blogpost, comment } from "../utils/types";
 import { useDispatch } from "react-redux";
 import { addComment } from "../store/blogpostSlice";
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 
 interface props {
   post: blogpost;

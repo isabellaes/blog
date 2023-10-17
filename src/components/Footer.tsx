@@ -1,4 +1,6 @@
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 const Footer = () => {
   return (
     <div className="footer">

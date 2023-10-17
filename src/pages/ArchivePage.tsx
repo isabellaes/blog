@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import BlogPost from "../components/BlogPost";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
+import "../css/tablet.css";
+import "../css/mobile.css";
 import { values } from "../utils/types";
 import { useParams } from "react-router-dom";
 import { useAppSelector, AppState } from "../store/store";
