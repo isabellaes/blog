@@ -146,9 +146,15 @@ button {
   font-weight: 500;
 }
 
-h3 {
+.blogpost h3 {
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
+  font-weight: 500;
+}
+
+.blogpost h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -164,4 +170,15 @@ h3 {
 .commentForm {
   display: flex;
   flex-direction: column;
+}
+
+.commentForm .input {
+  width: 15em;
+  margin-top: 1em;
+}
+
+.commentForm .message {
+  width: 15em;
+  height: 10em;
+  margin-top: 1em;
 }

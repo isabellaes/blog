@@ -26,14 +26,29 @@ const CommentForm = (props: props) => {
     dispatch(addComment({ comment: comment }));
   }
   return (
-    <div className="commentForm">
-      <form id="commentForm" onSubmit={onSubmit}>
-        <input type="text" onChange={(e) => setName(e.target.value)} />
-        <input type="text" onChange={(e) => setEmail(e.target.value)} />
-        <input type="text" onChange={(e) => setMessage(e.target.value)} />
+    <form id="commentForm" onSubmit={onSubmit}>
+      <div className="commentForm">
+        <label>Namn:</label>
+        <input
+          type="text"
+          className="input"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label>Email:</label>
+        <input
+          type="input"
+          className="input"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label>Kommentar:</label>
+        <input
+          type="text"
+          className="message"
+          onChange={(e) => setMessage(e.target.value)}
+        />
         <button type="submit">Skicka</button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

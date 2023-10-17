@@ -32,7 +32,7 @@ const BlogPostPage = () => {
       const filtred = comment.filter((c) => c.postId === blogpost.id);
       setComments(filtred);
     }
-  });
+  }, [comment, blogpost]);
 
   return (
     <div className="container">
@@ -47,23 +47,25 @@ const BlogPostPage = () => {
 
                   <p>{blogpost.date}</p>
                   <p>{blogpost.content}</p>
-                </div>
+                  <h3>Kommentarer:</h3>
 
-                <h3>Kommentarer:</h3>
-                {comments ? (
-                  comments.flatMap((comment) => (
-                    <div key={comment.id}>
-                      <h4>Namn:</h4>
-                      <p>{comment.name}</p>
-                      <h4>Kommentar:</h4>
-                      <p>{comment.comment}</p>
-                    </div>
-                  ))
-                ) : (
-                  <p></p>
-                )}
-                <h3>Kommentera:</h3>
-                <CommentForm post={blogpost}></CommentForm>
+                  {comments ? (
+                    comments.flatMap((comment) => (
+                      <div key={comment.id}>
+                        <h4>Namn:</h4>
+                        <p>{comment.name}</p>
+                        <h4>Kommentar:</h4>
+                        <p>{comment.comment}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <p></p>
+                  )}
+                </div>
+                <div className="blogpost">
+                  <h3>Kommentera:</h3>
+                  <CommentForm post={blogpost}></CommentForm>
+                </div>
               </div>
             ) : (
               <p></p>
