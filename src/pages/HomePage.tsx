@@ -3,16 +3,15 @@ import BlogPost from "../components/BlogPost";
 import { values } from "../utils/types";
 import { NavLink } from "react-router-dom";
 import profilepic from "../assets/blank-profile-picture-973460_640.png";
-import { RootState } from "../store/store";
-import { useAppSelector } from "../store/selector";
+import { useAppSelector, AppState } from "../store/store";
 
 const HomePage = () => {
-  const currentBlogs = (state: RootState) => {
+  const currentBlogs = (state: AppState) => {
     return state.post.posts;
   };
   const bloggposts = useAppSelector(currentBlogs);
 
-  const currentCategorys = (state: RootState) => {
+  const currentCategorys = (state: AppState) => {
     return state.post.categories;
   };
   const categorys = useAppSelector(currentCategorys);

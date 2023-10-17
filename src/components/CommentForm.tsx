@@ -13,7 +13,8 @@ const CommentForm = (props: props) => {
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
 
-  function onSubmit() {
+  function onSubmit(e: { preventDefault: () => void }) {
+    e.preventDefault();
     let comment: comment = {
       id: Math.random(),
       postId: props.post.id,

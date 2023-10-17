@@ -4,18 +4,17 @@ import profilepic from "../assets/blank-profile-picture-973460_640.png";
 import "../css/desktop.css";
 import { values } from "../utils/types";
 import { useParams } from "react-router-dom";
-import { useAppSelector } from "../store/selector";
-import { RootState } from "../store/store";
+import { useAppSelector, AppState } from "../store/store";
 
 const ArchivePage = () => {
   const params = useParams<{ Id: string }>();
 
-  const currentBlogs = (state: RootState) => {
+  const currentBlogs = (state: AppState) => {
     return state.post.posts;
   };
   const bloggposts = useAppSelector(currentBlogs);
 
-  const currentCategorys = (state: RootState) => {
+  const currentCategorys = (state: AppState) => {
     return state.post.categories;
   };
   const categorys = useAppSelector(currentCategorys);

@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store/store";
 import { blogpost, comment, category } from "../utils/types";
 import { blogposts, categorys } from "../utils/types";
 
@@ -63,14 +62,7 @@ const initialstate: initialstateinterface = {
       date: "2022-02-08",
       category: categorys[0],
     },
-    {
-      id: 7,
-      title: "Inlägg 2",
-      content:
-        " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae",
-      date: "2022-02-08",
-      category: categorys[0],
-    },
+
     {
       id: 7,
       title: "Inlägg 3",
@@ -146,8 +138,8 @@ export const postSlice = createSlice({
   reducers: {
     addComment: (state, action: PayloadAction<payloadAction>) => {
       console.log(state.comments);
-      state.comments.push(action.payload.comment);
-      console.log(state.comments);
+
+      state.comments = [action.payload.comment, ...state.comments];
     },
   },
 });
