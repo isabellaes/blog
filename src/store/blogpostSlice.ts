@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { blogpost, comment, category } from "../utils/types";
-import { blogposts, categorys } from "../utils/types";
+import { categorys } from "../utils/types";
 
 interface initialstateinterface {
   posts: blogpost[];
