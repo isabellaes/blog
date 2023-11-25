@@ -49,25 +49,23 @@ const BlogPostPage = () => {
 
                   <p>{blogpost.date}</p>
                   <p>{blogpost.content}</p>
-                  <h3>Kommentarer:</h3>
-
-                  {comments ? (
-                    comments.flatMap((comment) => (
-                      <div key={comment.id}>
-                        <h4>Namn:</h4>
-                        <p>{comment.name}</p>
-                        <h4>Kommentar:</h4>
-                        <p>{comment.comment}</p>
-                      </div>
-                    ))
-                  ) : (
-                    <p></p>
-                  )}
                 </div>
                 <div className="blogpost">
                   <h3>Kommentera:</h3>
                   <CommentForm post={blogpost}></CommentForm>
                 </div>
+                {comments ? (
+                  comments.flatMap((comment) => (
+                    <div className="comment" key={comment.id}>
+                      <h4>Namn:</h4>
+                      <p>{comment.name}</p>
+                      <h4>Kommentar:</h4>
+                      <p>{comment.comment}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p></p>
+                )}
               </div>
             ) : (
               <p></p>

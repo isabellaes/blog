@@ -155,14 +155,21 @@
 
   .blogpost h4 {
     font-family: "Roboto", sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
   }
 
   .blogpost p {
     font-family: "Roboto", sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 300;
+  }
+
+  .comment {
+    height: fit-content;
+    background-color: ghostwhite;
+    margin: 1em;
+    padding: 1em;
   }
   .profilepic {
     width: 30%;
