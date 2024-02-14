@@ -1,4 +1,4 @@
-# Blogg - Projekt till portfolio
+# Blog - Project for portfolio
 
 Blog built with React + Typescript.
 
